@@ -8,7 +8,7 @@ class Shredsheet(Tk.Frame):
     sheetHeight=10
 
     def __init__(self,master=None):
-        Tk.Frame.__init__(self,master,width=500,height=300)
+        Tk.Frame.__init__(self,master)
         self._init_sheet()
         self.grid()
 
@@ -58,7 +58,3 @@ class Shredsheet(Tk.Frame):
         e = Tk.Entry(self,width=5)
         e.grid(row=y,column=x)
         return e
-
-if __name__ == '__main__':
-    s = Shredsheet()
-    s.mainloop()
