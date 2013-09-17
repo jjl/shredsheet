@@ -1,15 +1,17 @@
-import Tkinter as Tk
-from shredsheet import Shredsheet
+import wx
+from mainwindow import MainWindow
 
-class Application(Tk.Tk):
+class Application(wx.App):
     
-    def __init__(self):
-        Tk.Tk.__init__(self)
-        self._grid = Shredsheet(self)
-        self.grid()
-        
+    def __init__(self,do_redir=False):
+        """
+        do_redir: redirect stdout, stderr to a window
+        """
+        wx.App.__init__(self,do_redir)
+        self.mw = MainWindow()
+         
     def run(self):
-        self.mainloop()
+        self.MainLoop()
         
 
 
